@@ -1,0 +1,46 @@
+dn: dc=mycompany,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: mycompany
+
+# Organizational Units
+dn: ou=groups,dc=mycompany,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=mycompany,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+# Create People
+dn: uid=u1,ou=people,dc=mycompany,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: User One
+sn: eh
+uid: u1
+password: 12345
+
+dn: uid=u2,ou=people,dc=mycompany,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: User Two
+sn: eh2
+uid: u2
+password: 12345
+
+# Create Groups
+dn: cn=developers,ou=groups,dc=mycompany,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: developers
+ou: developer
+uniqueMember: uid=u1,ou=people,dc=mycompany,dc=com
+uniqueMember: uid=u2,ou=people,dc=mycompany,dc=com
