@@ -1,6 +1,6 @@
 # Chatkit Custom Authorization Server
 
-Custom authorization server made in Java for chats build with [Chatkit](https://pusher.com/chatkit). The server bootstrap an embedded LDAP server where the user information is stored. Follow the tutorial [here](#).
+Custom authorization server made in Java for chats build with [Chatkit](https://pusher.com/chatkit). The server bootstrap an embedded LDAP server where the user information is stored. Follow the tutorial [here](https://pusher.com/tutorials/java-authentication-server-chatkit).
 
 ## Getting Started
 
