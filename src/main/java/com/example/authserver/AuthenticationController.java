@@ -41,13 +41,14 @@ public class AuthenticationController {
         System.out.println(user);
 
         if(user != null) {
-            Map<String, String> map = new HashMap<>();
+            Map<String, Object> map = new HashMap<>();
             Instant now = Instant.now();
             Instant expireTime = now.plusSeconds(3600);
             String token = generateToken(userId, now, expireTime);
 
             map.put("access_token", token);
-            map.put("expires_in", Long.toString(expireTime.toEpochMilli()));
+            //map.put("expires_in", Long.toString(expireTime.toEpochMilli()));
+            map.put("expires_in", expireTime.toEpochMilli());
             map.put("user_id", userId);
 
             status = HttpStatus.OK;
